@@ -12,12 +12,12 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 export const MULTISELECT_VALUE_ACCESSOR: any = {
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => MultiSelect),
+    useExisting: forwardRef(() => CustomMultiSelect),
     multi: true
 };
 
 @Component({
-    selector: 'p-multiSelect',
+    selector: 'custom-multiSelect',
     template: `
         <div #container [ngClass]="{'ui-multiselect ui-widget ui-state-default ui-corner-all':true,'ui-multiselect-open':overlayVisible,'ui-state-focus':focus,'ui-state-disabled': disabled}" [ngStyle]="style" [class]="styleClass"
             (click)="onMouseclick($event,in)">
@@ -99,7 +99,7 @@ export const MULTISELECT_VALUE_ACCESSOR: any = {
     },
     providers: [DomHandler, ObjectUtils, MULTISELECT_VALUE_ACCESSOR]
 })
-export class MultiSelect implements OnInit, AfterViewInit, AfterContentInit, AfterViewChecked, OnDestroy, ControlValueAccessor {
+export class CustomMultiSelect implements OnInit, AfterViewInit, AfterContentInit, AfterViewChecked, OnDestroy, ControlValueAccessor {
 
     @Input() scrollHeight: string = '200px';
 
@@ -659,7 +659,7 @@ export class MultiSelect implements OnInit, AfterViewInit, AfterContentInit, Aft
 
 @NgModule({
     imports: [CommonModule, SharedModule],
-    exports: [MultiSelect, SharedModule],
-    declarations: [MultiSelect]
+    exports: [CustomMultiSelect, SharedModule],
+    declarations: [CustomMultiSelect]
 })
-export class MultiSelectModule { }
+export class CustomMultiSelectModule { }

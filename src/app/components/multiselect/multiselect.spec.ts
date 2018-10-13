@@ -1,12 +1,12 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { MultiSelect } from './multiselect';
+import { CustomMultiSelect } from './multiselect';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('MultiSelect', () => {
   
-    let multiselect: MultiSelect;
-    let fixture: ComponentFixture<MultiSelect>;
+    let multiselect: CustomMultiSelect;
+    let fixture: ComponentFixture<CustomMultiSelect>;
     
     beforeEach(() => {
       TestBed.configureTestingModule({
@@ -14,11 +14,11 @@ describe('MultiSelect', () => {
           NoopAnimationsModule
         ],
         declarations: [
-          MultiSelect
+          CustomMultiSelect
         ]
       });
       
-      fixture = TestBed.createComponent(MultiSelect);
+      fixture = TestBed.createComponent(CustomMultiSelect);
       multiselect = fixture.componentInstance;
     });
 
